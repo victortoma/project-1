@@ -24,7 +24,7 @@
 	box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.25),
 		-1px -1px 7px rgba(0, 0, 0, 0.25);
 }
-.hamburgerBtn {
+#hamburger-btn {
 	display: flex;
 	max-width: 100px;
 	align-self: center;
@@ -37,7 +37,7 @@
 	align-items: center;
 	flex-direction: row;
 }
-.iconsWrapper {
+.icons-wrapper {
 	display: flex;
 }
 .main {
@@ -63,7 +63,7 @@
 		-3px -3px 20px rgba(0, 0, 0, 0.15);
 	border-radius: 8px;
 }
-.innerCard {
+.inner-card {
 	margin: 16px;
 	margin-top: 32px;
 	background-color: white;
@@ -82,11 +82,11 @@
 		justify-content: start;
 		padding-left: 16px;
 	}
-	.iconsWrapper {
+	.icons-wrapper {
 		display: flex;
 		flex-direction: column;
 	}
-	.hamburgerBtn {
+	#hamburger-btn {
 		display: block;
 		position: relative;
 	}
@@ -96,7 +96,7 @@
 		align-items: stretch;
 		transform: translateY(-300px);
 	}
-	.menuMobileOpen {
+	.menu-mobile-open {
 		background-color: white;
 		border: 1px solid gray;
 		position: absolute;
