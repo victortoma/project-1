@@ -1,4 +1,12 @@
-// const x = document.querySelector("h1")
-// x.innerHTML = " hi "
+const hamburgerBtn = document.querySelector("#hamburger-btn")
+const menu = document.querySelector(".menu")
 
-console.log("s")
+const openMenu = () => menu.classList.toggle("menu-mobile-open")
+
+hamburgerBtn.addEventListener("click", openMenu)
+
+window.addEventListener("resize", () => {
+	if (window.innerWidth > 700) {
+		return menu.classList.remove("menu-mobile-open")
+	}
+})
