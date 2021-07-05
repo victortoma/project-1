@@ -98,7 +98,7 @@
 .main-wrapper {
 	display: flex;
 	justify-content: center;
-	margin: 32px 9%;
+	margin: 32px 64px;
 }
 #main {
 	display: flex;
@@ -173,8 +173,8 @@
 .close-img-modal {
 	position: absolute;
 	align-self: flex-start;
-	top: 64;
-	right: 24;
+	top: 64px;
+	right: 24px;
 }
 .close-img-modal i {
 	color: rgb(255, 255, 255);
@@ -222,7 +222,7 @@
 		padding-top: 64px;
 	}
 	.close-img-modal {
-		right: 8;
+		right: 8px;
 	}
 }
 @media only screen and (max-width: 680px) {
