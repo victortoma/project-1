@@ -9,13 +9,13 @@ const closeImgModal = document.querySelector(".close-img-modal")
 const main = document.querySelector(".main")
 
 const displayModal = (event) => {
-	const img = imgModal.firstElementChild
+	const img = imgModal.firstElementChild.firstElementChild
 	img.src = event.target.src
 	closeImgModal.addEventListener(
 		"click",
 		() => (imgModal.style.display = "none")
 	)
-	return (imgModal.style.display = "flex")
+	return (imgModal.style.display = "grid")
 }
 avatarArr.forEach((element) => element.addEventListener("click", displayModal))
 
