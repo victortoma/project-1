@@ -18,6 +18,7 @@
 	width: 100%;
 	display: grid;
 	position: fixed;
+	align-content: center;
 	z-index: 1;
 	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
 }
@@ -219,7 +220,7 @@
 	/* MENU */
 	.menu {
 		display: none;
-		width: 200px;
+		width: 14rem;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 1fr 100%;
 		position: absolute;
@@ -272,7 +273,7 @@
 	.link,
 	.icons-wrapper > .icon {
 		height: 100%;
-		padding-left: 0.25rem;
+		padding-left: 0.5rem;
 	}
 	#nav {
 		justify-content: flex-end;
