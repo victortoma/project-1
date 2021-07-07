@@ -8,6 +8,8 @@
 :root {
 	--avatar: 9rem;
 }
+
+/* NAVBAR */
 .nav-wrapper {
 	height: 4rem;
 	position: relative;
@@ -60,7 +62,6 @@
 	box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15),
 		-1px -1px 6px rgba(0, 0, 0, 0.15);
 }
-
 .icon:hover {
 	background-color: rgba(0, 0, 0, 0.05);
 }
