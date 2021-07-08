@@ -72,7 +72,6 @@
 	font-weight: 700;
 }
 .hamburger-btn {
-	display: flex;
 	max-width: 6rem;
 	align-self: center;
 	display: none;
