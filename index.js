@@ -11,9 +11,11 @@ const main = document.querySelector(".main")
 
 document.addEventListener("keydown", function (event) {
 	if (event.ctrlKey && (event.key === "x" || event.key === "X")) {
-		if (!menu.classList.contains("menu-mobile-open")) openMenu()
-		else closeMenu()
-		event.preventDefault() //for what
+		if (!menu.classList.contains("menu-mobile-open")) {
+			openMenu()
+		} else {
+			closeMenu()
+		}
 	}
 })
 
