@@ -4,7 +4,6 @@
 	font-family: "Roboto", sans-serif;
 	color: rgba(17, 32, 71, 0.829);
 	box-sizing: border-box;
-	/* background-color: rgb(250, 250, 250); */
 }
 :root {
 	--avatar: 9rem;
@@ -92,7 +91,7 @@ body {
 	grid-template-columns: 2fr 8fr 2fr;
 }
 #main {
-	grid-area: 1/2/2/3;
+	grid-column: 2/3;
 	margin: 2rem 0;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -172,7 +171,7 @@ body {
 	position: absolute;
 }
 /* MODAL */
-.img-modal {
+.img-modal-wrapper {
 	display: none;
 	grid-template-columns: 6rem 1fr 6rem;
 	grid-template-rows: 5rem 1fr 5rem;
@@ -185,12 +184,12 @@ body {
 	left: 0;
 	top: 0;
 }
-.img-modal-wrapper {
+.img-modal {
 	display: grid;
 	grid-area: 2/2/3/3;
 	justify-items: center;
 }
-.img-modal img {
+.img-modal-wrapper img {
 	max-width: 50rem;
 	width: 100%;
 	border-radius: 1.5rem;
@@ -216,7 +215,7 @@ body {
 	#main {
 		grid-template-columns: 1fr 1fr;
 	}
-	.img-modal {
+	.img-modal-wrapper {
 		grid-template-columns: 4rem 1fr 4rem;
 	}
 }
@@ -340,7 +339,7 @@ body {
 		min-height: 20rem;
 		width: 100%;
 	}
-	.img-modal {
+	.img-modal-wrapper {
 		grid-template-columns: 2rem 1fr 2rem;
 	}
 }
