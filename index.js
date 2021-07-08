@@ -32,11 +32,13 @@ const displayModal = (event) => {
 avatarArr.forEach((element) => element.addEventListener("click", displayModal))
 const openMenu = () => {
 	body.style.overflow = "hidden"
+	body.style.marginRight = "17px"
 	menuBackground.style.display = "block"
 	menu.classList.toggle("menu-mobile-open")
 }
 const closeMenu = () => {
 	body.style.overflow = "initial"
+	body.style.marginRight = 0
 	menuBackground.style.display = "none"
 	return menu.classList.remove("menu-mobile-open")
 }

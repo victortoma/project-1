@@ -8,9 +8,6 @@
 :root {
 	--avatar: 9rem;
 }
-body {
-	background-color: rgb(250, 250, 250);
-}
 /* NAVBAR */
 .nav-wrapper {
 	height: 4rem;
