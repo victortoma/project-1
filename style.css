@@ -4,35 +4,7 @@
 	font-family: "Roboto", sans-serif;
 	color: rgba(17, 32, 71, 0.829);
 }
-.user-info h4 {
-	padding: 4px;
-	color: rgb(150, 150, 150);
-	font-size: 12px;
-	font-weight: 400;
-	letter-spacing: 1.3px;
-}
-.user-info h3 {
-	color: rgb(63, 63, 63);
-	font-size: 16px;
-	font-weight: 600;
-}
-.user h2 {
-	padding: 4px;
-	padding-bottom: 20px;
-	color: rgb(63, 63, 63);
-	font-size: 16px;
-	font-weight: 600;
-	letter-spacing: 1.3px;
-}
-.user h1 {
-	color: rgb(63, 63, 63);
-	font-size: 24px;
-	font-weight: 600;
-	letter-spacing: 1.3px;
-}
-.flex {
-	display: flex;
-}
+
 .nav-wrapper {
 	height: 60px;
 	position: relative;
@@ -75,6 +47,10 @@
 	align-self: flex-end;
 	font-weight: 700;
 }
+.links-wrapper,
+.icons-wrapper {
+	display: flex;
+}
 .hamburger-btn {
 	display: flex;
 	max-width: 100px;
@@ -112,7 +88,6 @@
 	flex-basis: 30%;
 	justify-content: center;
 }
-/* dimensiune normala aspect ratio */
 /* CARD */
 .card {
 	height: 360px;
@@ -148,6 +123,32 @@
 	left: 50%;
 	margin-left: -70px;
 	top: -70px;
+}
+.user-info h4 {
+	padding: 4px;
+	color: rgb(150, 150, 150);
+	font-size: 12px;
+	font-weight: 400;
+	letter-spacing: 1.3px;
+}
+.user-info h3 {
+	color: rgb(63, 63, 63);
+	font-size: 16px;
+	font-weight: 600;
+}
+.user h2 {
+	padding: 4px;
+	padding-bottom: 20px;
+	color: rgb(63, 63, 63);
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 1.3px;
+}
+.user h1 {
+	color: rgb(63, 63, 63);
+	font-size: 24px;
+	font-weight: 600;
+	letter-spacing: 1.3px;
 }
 .img-modal {
 	display: none;
@@ -289,6 +290,10 @@
 		box-shadow: none;
 		justify-content: end;
 	}
+	.links-wrapper,
+	.icons-wrapper {
+		flex-direction: column;
+	}
 	.hamburger-btn {
 		display: block;
 		position: relative;
@@ -341,10 +346,6 @@
 	}
 	.link:hover {
 		background-color: rgba(0, 0, 0, 0.05);
-	}
-	.flex {
-		display: flex;
-		flex-direction: column;
 	}
 }
 

@@ -3,7 +3,8 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./style.css" />
+		<!-- <link rel="stylesheet" href="./style.css" /> -->
+		<link rel="stylesheet" href="./style_grid.css" />
 		<link
 			rel="stylesheet"
 			href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
@@ -24,7 +25,7 @@
 				</div>
 				<div class="menu-mobile-background"></div>
 				<div class="menu">
-					<div class="links-wrapper flex">
+					<div class="links-wrapper">
 						<div class="menu-mobile-top-wrapper">
 							<div id="logo">
 								<img src="./images/JS logo.png" alt="logo" />
@@ -36,7 +37,7 @@
 						<div class="link">Issues</div>
 						<div class="link">Explore</div>
 					</div>
-					<div class="flex">
+					<div class="icons-wrapper">
 						<div class="icon"><i class="fas fa-shopping-cart"></i></div>
 						<div class="icon"><i class="fas fa-user"></i></div>
 						<div class="icon"><i class="fas fa-sign-out-alt"></i></div>
@@ -46,11 +47,13 @@
 		</div>
 		<div class="main-wrapper">
 			<div id="main">
-				<div class="img-modal">
-					<img src="" alt="" />
-					<span class="close-img-modal">
-						<i class="fas fa-times"></i>
-					</span>
+				<div class="img-modal-wrapper">
+					<div class="img-modal">
+						<img src="" alt="" />
+						<span class="close-img-modal">
+							<i class="fas fa-times"></i>
+						</span>
+					</div>
 				</div>
 				<div class="card-wrapper">
 					<div class="card">
@@ -67,20 +70,50 @@
 								<h1>Blossom</h1>
 								<h2>Lilly</h2>
 							</div>
+							<div class="user-info">
+								<div>
+									<h3>80K</h3>
+									<h4>Flowers</h4>
+								</div>
+								<div>
+									<h3>803K</h3>
+									<h4>Likes</h4>
+								</div>
+								<div>
+									<h3>1.4K</h3>
+									<h4>Photos</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-wrapper">
+					<div class="card">
+						<div class="top-card-section"></div>
+						<div class="inner-card">
 							<div>
-								<div class="user-info">
-									<div>
-										<h3>80K</h3>
-										<h4>Followers</h4>
-									</div>
-									<div>
-										<h3>803K</h3>
-										<h4>Likes</h4>
-									</div>
-									<div>
-										<h3>1.4K</h3>
-										<h4>Photos</h4>
-									</div>
+								<img
+									class="avatar"
+									src="/images/whitewaterlilly.jpg"
+									alt=""
+								/>
+							</div>
+							<div class="user">
+								<h1>White</h1>
+								<h2>Lilly</h2>
+							</div>
+							<div class="user-info">
+								<div>
+									<h3>80K</h3>
+									<h4>Flowers</h4>
+								</div>
+								<div>
+									<h3>803K</h3>
+									<h4>Likes</h4>
+								</div>
+								<div>
+									<h3>1.4K</h3>
+									<h4>Photos</h4>
 								</div>
 							</div>
 						</div>
@@ -101,20 +134,18 @@
 								<h1>Blossom</h1>
 								<h2>Lilly</h2>
 							</div>
-							<div>
-								<div class="user-info">
-									<div>
-										<h3>80K</h3>
-										<h4>Followers</h4>
-									</div>
-									<div>
-										<h3>803K</h3>
-										<h4>Likes</h4>
-									</div>
-									<div>
-										<h3>1.4K</h3>
-										<h4>Photos</h4>
-									</div>
+							<div class="user-info">
+								<div>
+									<h3>80K</h3>
+									<h4>Flowers</h4>
+								</div>
+								<div>
+									<h3>803K</h3>
+									<h4>Likes</h4>
+								</div>
+								<div>
+									<h3>1.4K</h3>
+									<h4>Photos</h4>
 								</div>
 							</div>
 						</div>
@@ -135,20 +166,18 @@
 								<h1>Blossom</h1>
 								<h2>Lilly</h2>
 							</div>
-							<div>
-								<div class="user-info">
-									<div>
-										<h3>80K</h3>
-										<h4>Followers</h4>
-									</div>
-									<div>
-										<h3>803K</h3>
-										<h4>Likes</h4>
-									</div>
-									<div>
-										<h3>1.4K</h3>
-										<h4>Photos</h4>
-									</div>
+							<div class="user-info">
+								<div>
+									<h3>80K</h3>
+									<h4>Flowers</h4>
+								</div>
+								<div>
+									<h3>803K</h3>
+									<h4>Likes</h4>
+								</div>
+								<div>
+									<h3>1.4K</h3>
+									<h4>Photos</h4>
 								</div>
 							</div>
 						</div>
@@ -161,28 +190,26 @@
 							<div>
 								<img
 									class="avatar"
-									src="/images/blue-background.jpg"
+									src="/images/whitewaterlilly.jpg"
 									alt=""
 								/>
 							</div>
 							<div class="user">
-								<h1>Blossom</h1>
+								<h1>White</h1>
 								<h2>Lilly</h2>
 							</div>
-							<div>
-								<div class="user-info">
-									<div>
-										<h3>80K</h3>
-										<h4>Followers</h4>
-									</div>
-									<div>
-										<h3>803K</h3>
-										<h4>Likes</h4>
-									</div>
-									<div>
-										<h3>1.4K</h3>
-										<h4>Photos</h4>
-									</div>
+							<div class="user-info">
+								<div>
+									<h3>80K</h3>
+									<h4>Flowers</h4>
+								</div>
+								<div>
+									<h3>803K</h3>
+									<h4>Likes</h4>
+								</div>
+								<div>
+									<h3>1.4K</h3>
+									<h4>Photos</h4>
 								</div>
 							</div>
 						</div>
