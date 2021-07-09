@@ -319,7 +319,7 @@
 		--avatar: 12rem;
 	}
 	.main-wrapper {
-		min-width: 25rem;
+		min-width: 20rem;
 		grid-template-columns: 1rem 1fr 1rem;
 		grid-template-rows: auto;
 	}
@@ -334,11 +334,16 @@
 	}
 	.card {
 		display: grid;
-		min-height: 20rem;
+		min-height: 10rem;
 		width: 100%;
 	}
 	.img-modal-wrapper {
 		grid-template-columns: 2rem 1fr 2rem;
+	}
+}
+@media only screen and (max-width: 430px) {
+	:root {
+		--avatar: 9rem;
 	}
 }
 

@@ -78,27 +78,26 @@
 }
 /* BODY */
 .main-wrapper {
-	margin: 2rem 0;
-	width: 100%;
+	margin: 0.5rem 3%;
+	width: 94%;
 	display: flex;
 	justify-content: center;
 }
 #main {
-	margin: 0 1rem;
-	width: auto;
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 2rem 0;
 }
 .card-wrapper {
-	height: calc(var(--avatar) * 3);
+	height: calc(var(--avatar) * 2.75);
 	display: flex;
-	flex-basis: 33.3333%;
+	flex-basis: 29.333%;
 	justify-content: center;
+	margin: 1rem 2%;
 }
 /* CARD */
 .card {
-	height: calc(var(--avatar) * 3);
+	height: calc(var(--avatar) * 2.75);
 	aspect-ratio: 2/3;
 	box-shadow: -3px -3px 3px white, 4px 3px 12px rgba(0, 0, 0, 0.15);
 	border-radius: 0.5rem;
@@ -209,22 +208,19 @@
 	animation-name: zoom;
 	animation-duration: 0.2s;
 }
-
 .user-info h4 {
 	padding-bottom: 0.25rem;
 }
 @media only screen and (max-width: 960px) {
-	#main {
-		max-width: 700px;
-	}
 	.img-modal {
 		align-items: flex-start;
 	}
 	.card-wrapper {
-		flex-basis: 50%;
+		margin: 1rem 1%;
+		flex-basis: 48%;
 	}
 }
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 600px) {
 	/* MENU */
 	.menu {
 		display: none;
@@ -311,16 +307,11 @@
 	}
 
 	/* GENERAL */
-	#main-wrapper {
-		display: flex;
-		justify-content: center;
-		margin: 2rem;
-	}
 	#main {
 		justify-content: center;
 	}
 	.card-wrapper {
-		flex-basis: 90%;
+		flex-basis: 100%;
 		height: auto;
 	}
 	.card {
@@ -348,6 +339,11 @@
 	}
 	:root {
 		--avatar: 12rem;
+	}
+}
+@media only screen and (max-width: 430px) {
+	:root {
+		--avatar: 9rem;
 	}
 }
 @keyframes zoom {
