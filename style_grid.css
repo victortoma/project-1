@@ -315,9 +315,6 @@
 		background-color: rgba(0, 0, 0, 0.05);
 	}
 	/* MAIN & CARD */
-	:root {
-		--avatar: 12rem;
-	}
 	.main-wrapper {
 		min-width: 20rem;
 		grid-template-columns: 1rem 1fr 1rem;
@@ -326,24 +323,19 @@
 	#main {
 		grid-template-columns: repeat(
 			auto-fit,
-			minmax(calc(var(--avatar) * 1.5), 1fr)
+			minmax(calc(var(--avatar) * 2), 1fr)
 		);
 	}
 	.card-wrapper {
-		justify-content: initial;
+		height: calc(var(--avatar) * 3);
+		display: initial;
 	}
 	.card {
-		display: grid;
-		min-height: 10rem;
 		width: 100%;
+		height: calc(var(--avatar) * 3);
 	}
 	.img-modal-wrapper {
 		grid-template-columns: 2rem 1fr 2rem;
-	}
-}
-@media only screen and (max-width: 430px) {
-	:root {
-		--avatar: 9rem;
 	}
 }
 
