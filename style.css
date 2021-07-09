@@ -303,6 +303,7 @@
 	.hamburger-btn-close .icon {
 		font-size: 1.5rem;
 		width: 2rem;
+		height: 2rem;
 		padding: 0;
 		display: flex;
 		justify-content: center;
