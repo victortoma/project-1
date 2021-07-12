@@ -8,7 +8,7 @@
 :root {
 	--avatar: 9rem;
 	--backgroundColor: rgb(250, 250, 250);
-	--shadow: rgba(0, 0, 0, 0.25);
+	--shadow: rgba(0, 0, 0, 0.3);
 	--lightShadow: rgba(0, 0, 0, 0.1);
 	min-width: 20rem;
 }
@@ -65,7 +65,7 @@
 	padding: 0.75rem;
 	margin-left: 1rem;
 	display: inline-block;
-	box-shadow: -3px -3px 3px white, 4px 3px 12px var(--shadow);
+	box-shadow: -3px -3px 3px white, 4px 3px 12px var(--lightShadow);
 }
 .icon:hover {
 	background-color: var(--lightShadow);
@@ -109,7 +109,7 @@
 .card {
 	height: calc(var(--avatar) * 2.75);
 	aspect-ratio: 2/3;
-	box-shadow: -3px -3px 3px white, 4px 3px 12px var(--shadow);
+	box-shadow: -3px -3px 3px white, 4px 3px 12px var(--lightShadow);
 	border-radius: 0.5rem;
 	margin: 0 auto;
 }
@@ -146,7 +146,7 @@
 	top: 1.5rem;
 }
 .avatar {
-	box-shadow: -1px -1px 5px white, 4px 3px 12px var(--shadow);
+	box-shadow: -1px -1px 5px white, 4px 3px 12px var(--lightShadow);
 	cursor: pointer;
 	height: var(--avatar);
 	width: var(--avatar);
@@ -282,7 +282,7 @@
 		display: block;
 	}
 	.hamburger-btn-close {
-		box-shadow: -3px -3px 3px white, 4px 3px 12px var(--shadow);
+		box-shadow: -3px -3px 3px white, 4px 3px 12px var(--lightShadow);
 		display: inline-block;
 		position: absolute;
 		border-radius: 50%;
