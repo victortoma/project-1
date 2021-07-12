@@ -19,7 +19,7 @@ document.addEventListener("keydown", function (event) {
 	}
 })
 
-imgModalImg.onclick = (e) => e.stopPropagation()
+// imgModalImg.onclick = (e) => e.stopPropagation()
 imgModalWrapper.onclick = () => (imgModalWrapper.style.display = "none")
 const displayModal = (event) => {
 	const img = imgModalWrapper.firstElementChild.firstElementChild
@@ -28,7 +28,7 @@ const displayModal = (event) => {
 		"click",
 		() => (imgModalWrapper.style.display = "none")
 	)
-	return (imgModalWrapper.style.display = "grid")
+	return (imgModalWrapper.style.display = "block")
 }
 
 avatarArr.forEach((element) => element.addEventListener("click", displayModal))
