@@ -10,16 +10,24 @@ const closeImgModal = document.querySelector(".close-img-modal")
 const main = document.querySelector(".main")
 
 document.addEventListener("keydown", function (event) {
-	if (event.ctrlKey && (event.key === "x" || event.key === "X")) {
+	if (
+		event.ctrlKey &&
+		(event.key === "x" || event.key === "X") &&
+		imgModalWrapper.style.display === "none"
+	) {
 		if (!menu.classList.contains("menu-mobile-open")) {
 			openMenu()
 		} else {
 			closeMenu()
 		}
 	}
+
+	if (event.key === "Escape" && !(imgModalWrapper.style.display === "none")) {
+		return (imgModalWrapper.style.display = "none")
+	}
 })
 
-// imgModalImg.onclick = (e) => e.stopPropagation()
+imgModalImg.onclick = (e) => e.stopPropagation()
 imgModalWrapper.onclick = () => (imgModalWrapper.style.display = "none")
 const displayModal = (event) => {
 	const img = imgModalWrapper.firstElementChild.firstElementChild
@@ -28,7 +36,7 @@ const displayModal = (event) => {
 		"click",
 		() => (imgModalWrapper.style.display = "none")
 	)
-	return (imgModalWrapper.style.display = "block")
+	return (imgModalWrapper.style.display = "grid")
 }
 
 avatarArr.forEach((element) => element.addEventListener("click", displayModal))
