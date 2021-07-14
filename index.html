@@ -3,8 +3,9 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- <link rel="stylesheet" href="./style.css" /> -->
-		<link rel="stylesheet" href="./style_grid.css" />
+		<link rel="stylesheet" href="./style.css" />
+		<!-- <link rel="stylesheet" href="./style_flex.css" /> -->
+		<!-- <link rel="stylesheet" href="./style_grid.css" /> -->
 		<!-- <link rel="stylesheet" href="./style_float.css" /> -->
 		<link
 			rel="stylesheet"
@@ -19,59 +20,65 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<div class="nav-wrapper">
-			<nav id="nav">
-				<div class="hamburger-btn">
-					<div class="icon"><i class="fas fa-bars"></i></div>
+		<div class="nav__wrapper">
+			<nav class="nav">
+				<!-- <div class="nav__hamburger-btn"> -->
+				<div class="menu__icon menu__hamburger-btn">
+					<i class="icon fas fa-bars"></i>
 				</div>
-				<div class="menu-mobile-background"></div>
+				<!-- </div> -->
+				<div class="menu__mobile__background"></div>
 				<div class="menu">
-					<div class="links-wrapper">
-						<div class="menu-mobile-top-wrapper">
-							<div id="logo">
-								<img src="./images/JS logo.png" alt="logo" />
-							</div>
-							<div class="hamburger-btn-close">
-								<div class="icon"><i class="fas fa-times"></i></div>
-							</div>
-						</div>
-						<div class="link">Issues</div>
-						<div class="link">Explore</div>
+					<div class="menu__icon menu__close-btn">
+						<i class="fas fa-times"></i>
 					</div>
-					<div class="icons-wrapper">
-						<div class="icon"><i class="fas fa-shopping-cart"></i></div>
-						<div class="icon"><i class="fas fa-user"></i></div>
-						<div class="icon"><i class="fas fa-sign-out-alt"></i></div>
+					<div class="menu__logo">
+						<img src="./images/JS logo.png" alt="logo" />
+					</div>
+					<div class="menu__links__wrapper">
+						<div class="menu__link">Issues</div>
+						<div class="menu__link">Explore</div>
+					</div>
+					<div class="menu__icons__wrapper">
+						<div class="menu__icon menu__icon--mobile">
+							<i class="fas fa-shopping-cart"></i>
+						</div>
+						<div class="menu__icon menu__icon--mobile">
+							<i class="fas fa-user"></i>
+						</div>
+						<div class="menu__icon menu__icon--mobile">
+							<i class="fas fa-sign-out-alt"></i>
+						</div>
 					</div>
 				</div>
 			</nav>
 		</div>
-		<div class="main-wrapper">
-			<div id="main">
-				<div class="img-modal-wrapper">
+		<div class="main__wrapper">
+			<div class="main">
+				<div class="img-modal__wrapper">
 					<div class="img-modal">
 						<img src="" alt="" />
-						<span class="close-img-modal">
+						<span class="img-modal__close">
 							<i class="fas fa-times"></i>
 						</span>
 					</div>
 				</div>
-				<div class="card-wrapper">
+				<div class="card__wrapper">
 					<div class="card">
-						<div class="top-card-section"></div>
-						<div class="inner-card">
+						<div class="card__header"></div>
+						<div class="card__body">
 							<div>
 								<img
-									class="avatar"
+									class="card__avatar"
 									src="/images/waterlilly.jpg"
 									alt=""
 								/>
 							</div>
-							<div class="user">
+							<div class="card__title">
 								<h1>Blossom</h1>
 								<h2>Lilly</h2>
 							</div>
-							<div class="user-info">
+							<div class="card__info">
 								<div>
 									<h3>80K</h3>
 									<h4>Flowers</h4>
@@ -88,22 +95,54 @@
 						</div>
 					</div>
 				</div>
-				<div class="card-wrapper">
+				<div class="card__wrapper">
 					<div class="card">
-						<div class="top-card-section"></div>
-						<div class="inner-card">
+						<div class="card__header"></div>
+						<div class="card__body">
 							<div>
 								<img
-									class="avatar"
+									class="card__avatar"
+									src="/images/waterlilly.jpg"
+									alt=""
+								/>
+							</div>
+							<div class="card__title">
+								<h1>Blossom</h1>
+								<h2>Lilly</h2>
+							</div>
+							<div class="card__info">
+								<div>
+									<h3>80K</h3>
+									<h4>Flowers</h4>
+								</div>
+								<div>
+									<h3>803K</h3>
+									<h4>Likes</h4>
+								</div>
+								<div>
+									<h3>1.4K</h3>
+									<h4>Photos</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card__wrapper">
+					<div class="card">
+						<div class="card__header"></div>
+						<div class="card__body">
+							<div>
+								<img
+									class="card__avatar"
 									src="/images/whitewaterlilly.jpg"
 									alt=""
 								/>
 							</div>
-							<div class="user">
+							<div class="card__title">
 								<h1>White</h1>
 								<h2>Lilly</h2>
 							</div>
-							<div class="user-info">
+							<div class="card__info">
 								<div>
 									<h3>80K</h3>
 									<h4>Flowers</h4>
@@ -120,22 +159,22 @@
 						</div>
 					</div>
 				</div>
-				<div class="card-wrapper">
+				<div class="card__wrapper">
 					<div class="card">
-						<div class="top-card-section"></div>
-						<div class="inner-card">
+						<div class="card__header"></div>
+						<div class="card__body">
 							<div>
 								<img
-									class="avatar"
+									class="card__avatar"
 									src="/images/waterlilly.jpg"
 									alt=""
 								/>
 							</div>
-							<div class="user">
+							<div class="card__title">
 								<h1>Blossom</h1>
 								<h2>Lilly</h2>
 							</div>
-							<div class="user-info">
+							<div class="card__info">
 								<div>
 									<h3>80K</h3>
 									<h4>Flowers</h4>
@@ -152,54 +191,22 @@
 						</div>
 					</div>
 				</div>
-				<div class="card-wrapper">
+				<div class="card__wrapper">
 					<div class="card">
-						<div class="top-card-section"></div>
-						<div class="inner-card">
+						<div class="card__header"></div>
+						<div class="card__body">
 							<div>
 								<img
-									class="avatar"
-									src="/images/waterlilly.jpg"
-									alt=""
-								/>
-							</div>
-							<div class="user">
-								<h1>Blossom</h1>
-								<h2>Lilly</h2>
-							</div>
-							<div class="user-info">
-								<div>
-									<h3>80K</h3>
-									<h4>Flowers</h4>
-								</div>
-								<div>
-									<h3>803K</h3>
-									<h4>Likes</h4>
-								</div>
-								<div>
-									<h3>1.4K</h3>
-									<h4>Photos</h4>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="card-wrapper">
-					<div class="card">
-						<div class="top-card-section"></div>
-						<div class="inner-card">
-							<div>
-								<img
-									class="avatar"
+									class="card__avatar"
 									src="/images/whitewaterlilly.jpg"
 									alt=""
 								/>
 							</div>
-							<div class="user">
+							<div class="card__title">
 								<h1>White</h1>
 								<h2>Lilly</h2>
 							</div>
-							<div class="user-info">
+							<div class="card__info">
 								<div>
 									<h3>80K</h3>
 									<h4>Flowers</h4>

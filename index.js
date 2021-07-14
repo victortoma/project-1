@@ -1,12 +1,12 @@
 const body = document.querySelector("body")
-const hamburgerBtn = document.querySelector(".hamburger-btn")
-const hamburgerBtnClose = document.querySelector(".hamburger-btn-close")
+const hamburgerBtn = document.querySelector(".menu__hamburger-btn")
+const hamburgerBtnClose = document.querySelector(".menu__close-btn")
 const menu = document.querySelector(".menu")
-const menuBackground = document.querySelector(".menu-mobile-background")
-const avatarArr = document.querySelectorAll(".avatar")
-const imgModalWrapper = document.querySelector(".img-modal-wrapper")
+const menuBackground = document.querySelector(".menu__mobile__background")
+const avatarArr = document.querySelectorAll(".card__avatar")
+const imgModalWrapper = document.querySelector(".img-modal__wrapper")
 const imgModalImg = document.querySelector(".img-modal img")
-const closeImgModal = document.querySelector(".close-img-modal")
+const closeImgModal = document.querySelector(".img-modal__close")
 const main = document.querySelector(".main")
 
 document.addEventListener("keydown", function (event) {
@@ -15,7 +15,7 @@ document.addEventListener("keydown", function (event) {
 		(event.key === "x" || event.key === "X") &&
 		imgModalWrapper.style.display === "none"
 	) {
-		if (!menu.classList.contains("menu-mobile-open")) {
+		if (!menu.classList.contains("menu__mobile-open")) {
 			openMenu()
 		} else {
 			closeMenu()
@@ -43,12 +43,12 @@ avatarArr.forEach((element) => element.addEventListener("click", displayModal))
 const openMenu = () => {
 	body.style.overflow = "hidden"
 	menuBackground.style.display = "block"
-	menu.classList.toggle("menu-mobile-open")
+	menu.classList.toggle("menu__mobile--open")
 }
 const closeMenu = () => {
 	body.style.overflow = "initial"
 	menuBackground.style.display = "none"
-	return menu.classList.remove("menu-mobile-open")
+	return menu.classList.remove("menu__mobile--open")
 }
 
 hamburgerBtn.addEventListener("click", openMenu)
