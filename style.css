@@ -193,9 +193,9 @@
 
 .card__title h2 {
   font-size: 1rem;
+  font-weight: 600;
 }
 
-.card__title h3,
 .card__title h1 {
   font-size: 1.5rem;
 }
@@ -223,6 +223,11 @@
   -ms-flex-line-pack: center;
       align-content: center;
   position: relative;
+}
+
+.card__info h3 {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .card__info h4 {
