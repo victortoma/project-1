@@ -5,16 +5,121 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 	</head>
+	<style>
+		table,
+		th,
+		td {
+			border: 1px solid black;
+		}
+		body {
+			margin-bottom: 400px;
+		}
+		h4 {
+			background-color: crimson;
+		}
+	</style>
 	<body>
 		<nav style="background-color: red">this is a nav</nav>
 		<address>address<br />aleea</address>
 		<abbr title="Unu doi trei">udt</abbr><br />
+
+		<article style="background-color: yellow">
+			The article tag specifies independent, self-contained content. An
+			article should make sense on its own and it should be possible to
+			distribute it independently from the rest of the site. Potential
+			sources for the element: Forum post Blog post News story
+		</article>
+		<audio controls></audio>
+		<h3>
+			BASE TAG - Specifies the base URL/target for all relative URLs in a
+			document
+		</h3>
+		<table>
+			<caption>
+				table caption/colgroup span color
+			</caption>
+			<colgroup>
+				<col span="2" style="background-color: red" />
+			</colgroup>
+			<tr>
+				<th>table head</th>
+				<th>table head</th>
+				<th>table head</th>
+			</tr>
+			<tr>
+				<td>table data</td>
+				<td>table data</td>
+				<td>table data</td>
+			</tr>
+		</table>
+		<dl>
+			<dt>description list style</dt>
+			<dd>margin-left: 40px</dd>
+		</dl>
+		<em>emphazized italic text</em>
+		<h4>
+			embeded is for external resource: web page, picture, media, plug-in
+		</h4>
+		<embed
+			type="image/jpg"
+			src="/images/waterlilly.jpg"
+			width="300"
+			height="200"
+		/>
+		<fieldset>
+			<legend>Legend for fieldset</legend>
+			form formformformformform
+		</fieldset>
+		<figure>
+			<img src="/images/waterlilly.jpg" alt="" />
+
+			<figcaption>
+				Figcaption : Figure usually used for content, like img,
+				illustrations, diagrams, photos, code listings. has margin
+			</figcaption>
+		</figure>
+		<i>
+			The i-tag defines a part of text in an alternate voice or mood and is
+			italic by default
+		</i>
+		<iframe src="https://www.youtube.com/">
+			src="youtube"<br />
+			It is like having another browser window inside of your webpage. ex:
+			youtube videos
+		</iframe>
+		<p>
+			input type: button checkbox color date datetime-local email file hidden
+			image month number password radio range reset search submit tel text
+			time url week
+		</p>
+		<ins>inserted text is underlined</ins><br />
+		<label>
+			labels are for inputs and are read out loud for screenreaders
+		</label>
+		<main>
+			The "main" tag specifies the main content of a document. The content
+			inside the "main" element should be unique to the document
+		</main>
 		<img
 			src="./images/waterlilly.jpg"
 			alt="waterlilly"
 			usemap="#lillymap"
 			width="400px"
 		/>
+		<input type="datetime-local" />
+		<h3>
+			<pre>
+input can have the regex attribute 
+         formaction - 	Specifies the URL of the file that will process
+          the input control 
+          when the form is submitted (for type="submit" and type="image")
+      </pre
+			>
+		</h3>
+		<p>
+			MAP tag is used to define an image map. An image map is an image with
+			clickable areas
+		</p>
 		<map name="lillymap">
 			<area
 				shape="circle"
@@ -23,37 +128,57 @@
 				alt=""
 			/>
 		</map>
-		<article style="background-color: blue">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-			omnis debitis magnam error, animi adipisci optio velit atque dolores
-			libero facere quos ea. Corporis ab, voluptatem dolorum officiis
-			cupiditate optio.
-		</article>
-		<audio controls></audio>
-		<table>
-			<tr>
-				<th>1</th>
-				<th>2</th>
-				<th>3</th>
-			</tr>
-			<tr>
-				<td>a</td>
-				<td>b</td>
-				<td>c</td>
-			</tr>
-		</table>
-		<section style="background-color: aqua">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolor
-			odit earum deleniti nobis laboriosam repellat, doloribus perspiciatis
-			fugiat ut vel amet quidem accusantium laborum vero ducimus illum
-		</section>
-		<blockquote style="background-color: blueviolet">lorem30</blockquote>
-		<cite>title</cite>
-		<code> code tag</code>
-		<p>data: <data value="1235">cherry tomato</data></p>
-		<footer style="background-color: bisque">
-			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
-			eligendi.
+		<mark>Highlighted text!!</mark>
+		<meter min="0" max="10" value="2"></meter>
+		<p>
+			The OBJECT tag defines a container for an external resource especially
+			plug-ins.
+		</p>
+		<pre>
+       pre tag keeps     spaces, indentation and 
+           brake row by default
+      </pre>
+		<label for="progress-bar"></label>
+		<progress id="progress-bar" value="15" max="100"></progress>
+		<s>s tag strikes through</s>
+		<section>section tag determines a section of a document</section>
+		<pre>
+Picture SOURCE Tag example including media-queries
+         resize for effect:
+      </pre>
+		<picture>
+			<source
+				srcset="/images/whitewaterlilly.jpg"
+				media="(min-width: 800px)"
+			/>
+			<source srcset="mdn-logo-medium.png" media="(min-width: 600px)" />
+			<img
+				src="/images/waterlilly.jpg"
+				alt="Picture SOURCE Tag example including media-queries"
+			/>
+		</picture>
+		<p>acest text este<sub>subscris</sub> folosind vertical-align</p>
+		<p>acest text este <sup>suprascris</sup></p>
+		<template id="templateId">
+			<h4>
+				this template is initially hidden and then rendered with cloneNode
+			</h4>
+			<pre></pre>
+		</template>
+		<pre>
+          <h5> Title Tag </h5>
+      <p>The contents of a page title is very important for search engine optimization (SEO)! 
+         The page title is used by search engine algorithms to decide the order when listing pages in search results.</p>
+      </pre>
+		<footer style="background-color: coral; text-align: center">
+			Footer should stay on bottom
 		</footer>
 	</body>
+	<script>
+		const firstTemplate = document.getElementsByTagName("template")[0]
+		const renderedTemplate = firstTemplate.content.cloneNode(true)
+		renderedTemplate.querySelector("pre").innerText = `and this is added 
+      after within pre tag with template literals`
+		document.body.appendChild(renderedTemplate)
+	</script>
 </html>
