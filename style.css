@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  color: #415380;
+  color: var(--mainColor);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -168,6 +168,7 @@
 .card__header {
   height: auto;
   background-size: cover;
+  background-position: center center;
   background-image: url("/images/blue-background.jpg");
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -329,7 +330,7 @@
   .menu__mobile__background {
     display: none;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--shadow);
     width: 100%;
     height: 100%;
     -webkit-animation: opacity 0.2s ease-in;
@@ -338,7 +339,7 @@
   .menu__mobile--open {
     -webkit-animation: slide-from-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
             animation: slide-from-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    background-color: #fafafa;
+    background-color: var(--backgroundColor);
     border-bottom-left-radius: 0.25rem;
     border-top-left-radius: 0.25rem;
     -ms-grid-rows: auto auto auto 100%;
@@ -393,8 +394,8 @@
     padding-left: 0.5rem;
   }
   .menu__link {
-    -webkit-box-shadow: -3px -3px 3px white, 4px 3px 12px rgba(0, 0, 0, 0.15);
-            box-shadow: -3px -3px 3px white, 4px 3px 12px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: -3px -3px 3px white, 4px 3px 12px var(--lightShadow);
+            box-shadow: -3px -3px 3px white, 4px 3px 12px var(--lightShadow);
     height: 2.25rem;
     border-radius: 0.5rem;
     padding-left: 0.5rem;
