@@ -76,17 +76,14 @@ body {
 }
 
 .toggle__slider:before {
-  content: "";
-  background-color: var(--mainColor);
-  -webkit-box-shadow: 1px 1px 2px var(--shadow);
-          box-shadow: 1px 1px 2px var(--shadow);
+  font-family: "Font Awesome 5 Free";
+  content: "\f186";
+  font-weight: 900;
   -webkit-transition: 0.3s;
   transition: 0.3s;
   width: 1.5rem;
   height: 1.5rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  font-size: 1.3rem;
   border-radius: 50%;
 }
 
@@ -95,11 +92,16 @@ body {
 }
 
 .toggle input:checked + .toggle__slider:before {
-  -webkit-transform: translateX(1rem);
-          transform: translateX(1rem);
+  font-family: "Font Awesome 5 Free";
+  content: "\f185";
+  font-weight: 900;
+  font-size: 1.35rem;
+  text-align: center;
+  -webkit-transform: translateX(1rem) rotate(45deg);
+          transform: translateX(1rem) rotate(45deg);
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  background-color: rgba(245, 75, 154, 0.808);
+  color: rgba(207, 180, 28, 0.9);
 }
 
 .menu {
