@@ -11,7 +11,6 @@ const closeImgModal = document.querySelector(".img-modal__close")
 const main = document.querySelector(".main")
 const toggle = document.querySelector(".toggle > input")
 const toggleDark = () => {
-	console.log(toggle)
 	if (toggle.checked === true) {
 		body.classList.add("dark-theme")
 	} else {

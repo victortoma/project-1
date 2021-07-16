@@ -211,8 +211,7 @@ body {
 
 /* CARD */
 .card {
-  min-height: calc(var(--avatar) * 2.75);
-  max-height: calc(var(--avatar) * 4);
+  height: calc(var(--avatar) * 2.75);
   aspect-ratio: 2/3;
   -webkit-box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
           box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
@@ -227,7 +226,7 @@ body {
 .card__wrapper {
   display: -ms-grid;
   display: grid;
-  width: 100%;
+  margin: 0 auto;
 }
 
 .card__header {

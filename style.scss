@@ -153,8 +153,7 @@ body {
 
 /* CARD */
 .card {
-	min-height: calc(var(--avatar) * 2.75);
-	max-height: calc(var(--avatar) * 4);
+	height: calc(var(--avatar) * 2.75);
 	aspect-ratio: 2/3;
 	box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
 	border-radius: 0.5rem;
@@ -163,7 +162,7 @@ body {
 	grid-template-rows: 1fr 2fr;
 	&__wrapper {
 		display: grid;
-		width: 100%;
+		margin: 0 auto;
 	}
 	&__header {
 		height: auto;
