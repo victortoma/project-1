@@ -80,7 +80,6 @@ body {
 		}
 	}
 }
-
 .menu {
 	display: grid;
 	grid-template-columns: 5rem 1fr 1fr;
@@ -162,7 +161,8 @@ body {
 	grid-template-rows: 1fr 2fr;
 	&__wrapper {
 		display: grid;
-		margin: 0 auto;
+		width: 100%;
+		justify-items: center;
 	}
 	&__header {
 		height: auto;

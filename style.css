@@ -226,7 +226,8 @@ body {
 .card__wrapper {
   display: -ms-grid;
   display: grid;
-  margin: 0 auto;
+  width: 100%;
+  justify-items: center;
 }
 
 .card__header {
