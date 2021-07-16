@@ -11,6 +11,7 @@
 	--shadow: rgba(0, 0, 0, 0.15);
 	--lightShadow: rgba(0, 0, 0, 0.1);
 	--mainColor: rgb(65, 83, 128);
+	--secondary: rgb(250, 250, 250);
 	--contrast-light: white;
 	--opacity: 1;
 	min-width: 20rem;
@@ -18,6 +19,7 @@
 .dark-theme {
 	--background: rgb(48, 48, 48);
 	--mainColor: rgb(197, 197, 197);
+	--secondary: rgb(61, 61, 61);
 	--lightShadow: rgb(0, 0, 0, 0.15);
 	--shadow: rgba(0, 0, 0, 0.4);
 	--contrast-light: rgb(0, 0, 0, 0.3);
@@ -106,6 +108,7 @@ body {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 	&__icon {
+		background-color: var(--secondary);
 		cursor: pointer;
 		height: 2.25rem;
 		width: 2.25rem;
@@ -154,7 +157,7 @@ body {
 	aspect-ratio: 2/3;
 	box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
 	border-radius: 0.5rem;
-	background-color: var(--background);
+	background-color: var(--secondary);
 	display: grid;
 	grid-template-rows: 1fr 2fr;
 	&__wrapper {
@@ -350,6 +353,8 @@ body {
 			height: 2.25rem;
 			border-radius: 0.5rem;
 			padding-left: 0.5rem;
+			background-color: var(--secondary);
+
 			&:hover {
 				background-color: var(--lightShadow);
 			}
