@@ -58,6 +58,9 @@ body {
   width: 3rem;
   border-radius: 35px;
   background-color: var(--background);
+  border-bottom: 0.5px solid var(--contrast-light);
+  -webkit-box-shadow: inset -2px -2px 6px var(--lightShadow), inset 2px 2px 6px var(--lightShadow);
+          box-shadow: inset -2px -2px 6px var(--lightShadow), inset 2px 2px 6px var(--lightShadow);
 }
 
 .toggle__slider {
@@ -65,12 +68,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   cursor: pointer;
-  border-bottom: 0.5px solid var(--contrast-light);
-  -webkit-box-shadow: inset -2px -2px 6px var(--lightShadow), inset 2px 2px 6px var(--lightShadow);
-          box-shadow: inset -2px -2px 6px var(--lightShadow), inset 2px 2px 6px var(--lightShadow);
   border-radius: 35px;
   padding: 0.25rem;
 }
@@ -82,8 +80,8 @@ body {
           box-shadow: 1px 1px 2px var(--shadow);
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  width: 60%;
-  height: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -97,6 +95,8 @@ body {
 .toggle input:checked + .toggle__slider:before {
   -webkit-transform: translateX(1rem);
           transform: translateX(1rem);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   background-color: rgba(245, 75, 154, 0.808);
 }
 
@@ -311,13 +311,13 @@ body {
 
 /* MODAL */
 .img-modal {
+  height: 100%;
+  top: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
-  grid-area: 2/2/3/3;
+  grid-column: 2/3;
   justify-items: center;
 }
 
@@ -325,8 +325,8 @@ body {
   display: none;
   -ms-grid-columns: 6rem 1fr 6rem;
       grid-template-columns: 6rem 1fr 6rem;
-  -ms-grid-rows: 5rem 1fr 5rem;
-      grid-template-rows: 5rem 1fr 5rem;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
   width: 100%;
   height: 100%;
   background-color: var(--shadow);
@@ -338,7 +338,7 @@ body {
 }
 
 .img-modal__wrapper img {
-  max-width: 50rem;
+  max-width: 35rem;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -360,7 +360,7 @@ body {
 }
 
 .img-modal__close i {
-  color: var(--background);
+  color: #fafafa;
   font-weight: 600;
   font-size: 1.5rem;
   -webkit-animation-name: zoom;
@@ -491,8 +491,8 @@ body {
     display: initial;
   }
   .img-modal__wrapper {
-    -ms-grid-columns: 2rem 1fr 2rem;
-        grid-template-columns: 2rem 1fr 2rem;
+    -ms-grid-columns: 1rem 1fr 1rem;
+        grid-template-columns: 1rem 1fr 1rem;
   }
 }
 
