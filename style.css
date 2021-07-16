@@ -9,16 +9,31 @@
 
 :root {
   --avatar: 9rem;
-  --backgroundColor: rgba(250, 250, 250, 1);
-  --shadow: rgba(0, 0, 0, 0.3);
+  --background: rgb(250, 250, 250);
+  --shadow: rgba(0, 0, 0, 0.15);
   --lightShadow: rgba(0, 0, 0, 0.1);
-  --mainColor: rgba(65, 83, 128, 1);
+  --mainColor: rgb(65, 83, 128);
+  --contrast-light: white;
+  --opacity: 1;
   min-width: 20rem;
+}
+
+.dark-theme {
+  --background: rgb(48, 48, 48);
+  --mainColor: rgb(197, 197, 197);
+  --lightShadow: rgb(0, 0, 0, 0.15);
+  --shadow: rgba(0, 0, 0, 0.4);
+  --contrast-light: rgb(0, 0, 0, 0.3);
+  --opacity: 0.7;
+}
+
+body {
+  background-color: var(--background);
 }
 
 /* NAVBAR */
 .nav {
-  background-color: var(--backgroundColor);
+  background-color: var(--background);
   -webkit-box-shadow: 1px 1px 15px var(--shadow);
           box-shadow: 1px 1px 15px var(--shadow);
   height: 4rem;
@@ -32,8 +47,60 @@
 }
 
 .nav__wrapper {
+  background-color: var(--background);
   height: 4rem;
   position: relative;
+}
+
+.toggle {
+  display: inline-block;
+  height: 2rem;
+  width: 3rem;
+}
+
+.toggle__slider {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: var(--background);
+  border-bottom: 0.5px solid var(--contrast-light);
+  -webkit-box-shadow: inset -2px -2px 6px var(--lightShadow), inset 2px 2px 6px var(--lightShadow);
+          box-shadow: inset -2px -2px 6px var(--lightShadow), inset 2px 2px 6px var(--lightShadow);
+  border-radius: 35px;
+  padding: 0.25rem;
+}
+
+.toggle__slider:before {
+  content: "";
+  background-color: var(--mainColor);
+  -webkit-box-shadow: 1px 1px 2px var(--shadow);
+          box-shadow: 1px 1px 2px var(--shadow);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 60%;
+  aspect-ratio: 1/1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 50%;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle input:checked + .toggle__slider {
+  background-color: var(--background);
+}
+
+.toggle input:checked + .toggle__slider:before {
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+  background-color: rgba(245, 75, 154, 0.808);
 }
 
 .menu {
@@ -68,6 +135,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  justify-items: flex-end;
   grid-column-gap: 1rem;
   -ms-grid-column-align: end;
       justify-self: end;
@@ -90,8 +158,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: -3px -3px 3px white, 4px 3px 12px rgba(0, 0, 0, 0.15);
-          box-shadow: -3px -3px 3px white, 4px 3px 12px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
+          box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
 }
 
 .menu__icon:hover {
@@ -123,8 +191,7 @@
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
-  margin: 0;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
@@ -138,17 +205,19 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: 2fr 8fr 2fr;
-      grid-template-columns: 2fr 8fr 2fr;
+  -ms-grid-columns: 1fr 10fr 1fr;
+      grid-template-columns: 1fr 10fr 1fr;
 }
 
 /* CARD */
 .card {
-  height: calc(var(--avatar) * 2.75);
+  min-height: calc(var(--avatar) * 2.75);
+  max-height: calc(var(--avatar) * 4);
   aspect-ratio: 2/3;
-  -webkit-box-shadow: -3px -3px 3px white, 4px 3px 12px var(--lightShadow);
-          box-shadow: -3px -3px 3px white, 4px 3px 12px var(--lightShadow);
+  -webkit-box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
+          box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
   border-radius: 0.5rem;
+  background-color: var(--background);
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 2fr;
@@ -156,12 +225,8 @@
 }
 
 .card__wrapper {
-  height: calc(var(--avatar) * 2.75);
   display: -ms-grid;
   display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   width: 100%;
 }
 
@@ -172,10 +237,11 @@
   background-image: url("/images/blue-background.jpg");
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
+  opacity: var(--opacity);
 }
 
 .card__body {
-  background-color: #fdfdfd;
+  background-color: inherit;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   position: relative;
@@ -195,7 +261,7 @@
 
 .card__title h2 {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .card__title h1 {
@@ -204,8 +270,8 @@
 
 .card__avatar {
   --avatar: 9rem;
-  -webkit-box-shadow: -1px -1px 5px white, 4px 3px 12px var(--lightShadow);
-          box-shadow: -1px -1px 5px white, 4px 3px 12px var(--lightShadow);
+  -webkit-box-shadow: -1px -1px 5px var(--shadow), 4px 3px 12px var(--lightShadow);
+          box-shadow: -1px -1px 5px var(--shadow), 4px 3px 12px var(--lightShadow);
   cursor: pointer;
   height: var(--avatar);
   width: var(--avatar);
@@ -229,7 +295,7 @@
 
 .card__info h3 {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .card__info h4 {
@@ -297,7 +363,7 @@
 }
 
 .img-modal__close i {
-  color: var(--backgroundColor);
+  color: var(--background);
   font-weight: 600;
   font-size: 1.5rem;
   -webkit-animation-name: zoom;
@@ -310,6 +376,10 @@
   .main {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+  }
+  .main__wrapper {
+    -ms-grid-columns: 2rem 10fr 2rem;
+        grid-template-columns: 2rem 10fr 2rem;
   }
   .img-modal__wrapper {
     -ms-grid-columns: 4rem 1fr 4rem;
@@ -339,7 +409,7 @@
   .menu__mobile--open {
     -webkit-animation: slide-from-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
             animation: slide-from-right 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    background-color: var(--backgroundColor);
+    background-color: var(--background);
     border-bottom-left-radius: 0.25rem;
     border-top-left-radius: 0.25rem;
     -ms-grid-rows: auto auto auto 100%;
@@ -394,8 +464,8 @@
     padding-left: 0.5rem;
   }
   .menu__link {
-    -webkit-box-shadow: -3px -3px 3px white, 4px 3px 12px var(--lightShadow);
-            box-shadow: -3px -3px 3px white, 4px 3px 12px var(--lightShadow);
+    -webkit-box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
+            box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
     height: 2.25rem;
     border-radius: 0.5rem;
     padding-left: 0.5rem;
