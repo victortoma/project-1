@@ -1,3 +1,4 @@
+// const root = document.querySelector("root")[0]
 const body = document.querySelector("body")
 const hamburgerBtn = document.querySelector(".menu__hamburger-btn")
 const hamburgerBtnClose = document.querySelector(".menu__close-btn")
@@ -8,7 +9,15 @@ const imgModalWrapper = document.querySelector(".img-modal__wrapper")
 const imgModalImg = document.querySelector(".img-modal img")
 const closeImgModal = document.querySelector(".img-modal__close")
 const main = document.querySelector(".main")
-
+const toggle = document.querySelector(".toggle > input")
+const toggleDark = () => {
+	if (toggle.checked === true) {
+		body.classList.add("dark-theme")
+	} else {
+		body.classList.remove("dark-theme")
+	}
+}
+toggle.onclick = toggleDark
 document.addEventListener("keydown", function (event) {
 	if (
 		event.ctrlKey &&
