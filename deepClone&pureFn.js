@@ -1,38 +1,84 @@
-const arr = [0, 1, 2, 3]
-clonedArr = [...arr]
-arr.push(5)
-console.log(arr, clonedArr, "cloned shallow")
-
-const deepArr = [["unu"], 1]
-shallowArr = [...deepArr]
-shallowArr[0].push("shallow")
-console.log(deepArr, shallowArr)
-
-const deepArr2 = [["doi"], 2]
-shallowArr2 = [...deepArr2]
-shallowArr2[0] = ["reference changed"]
-console.log(deepArr2, shallowArr2)
-
-const deepArr3 = [["trei"], 3]
-shallowArr3 = JSON.parse(JSON.stringify(deepArr3))
-deepArr3[0].push("deep")
-console.log(deepArr3, shallowArr3)
-
-//impure
-const impure1 = (x) => {
-	const doubled = x * 2
-	return doubled + 10
+const obj = {
+	arr: [
+		"trei",
+		undefined,
+		true,
+		function () {
+			return console.log("hey")
+		},
+	],
+	num: 3,
+	symboObj: {
+		symbo: Symbol(""),
+		x: this.num,
+		anotherObj: {
+			innerMethod: function (cloneType) {
+				console.log(`innerObj method ${cloneType} `)
+			},
+		},
+	},
+	method: function (text) {
+		console.log(text, "using this keyword is:", this.num)
+	},
 }
-//pure1
-const pure1 = (x) => {
-	return ((doubled) => doubled + 10)(x * 2)
+console.log("ORIGINAL OBJ:", obj)
+console.log("---------------------")
+
+const clonedObj = obj
+console.log(clonedObj, "reference to the original obj")
+console.log("---------------------")
+
+stringifiedObj = JSON.parse(JSON.stringify(obj))
+console.log(stringifiedObj, "stringify shallow doesnt copy methods")
+console.log("stringifiedObj is the same with obj?", stringifiedObj === obj)
+// stringifiedObj.method("JSON stringify method")
+console.log("---------------------")
+
+const objAssigned = Object.assign({}, obj)
+console.log(
+	objAssigned,
+	"Object assign is the fastest and can be used to add properties to an existing object, giving the first param the actual obj"
+)
+objAssigned.method("Object assign method")
+objAssigned.symboObj.anotherObj.innerMethod("Object assign method")
+console.log("objAssigned is the same with obj?", objAssigned === obj)
+
+console.log("---------------------")
+
+const forKeyObj = {}
+for (let key in obj) {
+	forKeyObj[key] = obj[key]
 }
+console.log(forKeyObj, "forKeyIn method")
+forKeyObj.method("for key in method")
+forKeyObj.symboObj.anotherObj.innerMethod("for key in method")
+console.log("forKeyObj is the same with obj?", forKeyObj === obj)
+
+console.log("---------------------")
+
+const spreadObj = { ...obj }
+console.log(
+	spreadObj,
+	"spreadObj cannot assign properties to the same existing obj if it is declared with const"
+)
+spreadObj.method("spreadObj")
+spreadObj.symboObj.anotherObj.innerMethod("spread clone")
+console.log("spreadObj is the same with obj?", spreadObj === obj)
+
+console.log("---------------------")
+
+// obj.num = "replaced"
+console.log(obj, "obj after key change")
+console.log("---------------------")
+
 //impure2
 let i = 0
+console.log(i, "initial global state")
 while (i < 5) {
 	i += 1
 }
-console.log(i)
+console.log(i, "global state is modified")
+console.log("---------------------")
 //pure2
 function loop(j) {
 	if (j < 5) {
@@ -41,25 +87,26 @@ function loop(j) {
 	}
 	return j
 }
-const k = loop(0)
+const k = loop(2)
+console.log(k)
+console.log("---------------------")
 
-const arra = ["red", "green", "blue", "pink", "purple"]
-arra.forEach((elem, index) => {
-	if (elem === "blue") {
-		return // break from loop for this index only
-	} else console.log(elem, "   - foreach elem")
-	// This callback implicitly returns `undefined`, which
-	// is a falsy value. Therefore, looping continues.
-})
-arra.some((elem, index) => {
-	if (index === 3) {
-		return true // break from loop
-	} else console.log(elem, "   - some elem")
-	// This callback implicitly returns `undefined`, which
-	// is a falsy value. Therefore, looping continues.
-})
+//impure2
+const globalArr = [0, 1, 2]
+console.log("before", globalArr)
 
-// arra.splice(4) // gives the first 4 elems
-// arra.splice(2, 0) // the array is not altered, nothing is deleted nor added
-arra.splice(0, "aasaafsda", 0)
-console.log(arra)
+function impure2(elem) {
+	return globalArr.push(elem)
+}
+impure2(3)
+console.log("after", globalArr)
+console.log("---------------------")
+
+//pure2
+const globalArr2 = [0, 1, 2]
+function pure2(arr, elem) {
+	const newArr = arr
+	arr.push(elem)
+	return newArr
+}
+console.log(pure2(globalArr2, 7), "new arr returned by fn")
