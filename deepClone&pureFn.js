@@ -37,12 +37,12 @@ console.log("---------------------")
 const objAssigned = Object.assign({}, obj)
 console.log(
 	objAssigned,
-	"Object assign is the fastest and can be used to add properties to an existing object, giving the first param the actual obj"
+	"Object assign is altered by an ulterior push, its the fastest and can be used to add properties to an existing object, giving the first param the actual obj"
 )
 objAssigned.method("Object assign method")
-objAssigned.symboObj.anotherObj.innerMethod("Object assign method")
+objAssigned.symboObj.anotherObj.innerMethod("Object assign method ")
+objAssigned.arr.push("pushed after")
 console.log("objAssigned is the same with obj?", objAssigned === obj)
-
 console.log("---------------------")
 
 const forKeyObj = {}
