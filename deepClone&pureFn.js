@@ -37,7 +37,7 @@ console.log("---------------------")
 const objAssigned = Object.assign({}, obj)
 console.log(
 	objAssigned,
-	"Object assign is altered by an ulterior push, its the fastest and can be used to add properties to an existing object, giving the first param the actual obj"
+	"Object assign is altered by an ulterior push inside an referenced array, its the fastest and can be used to add properties to an existing object, giving the first param the actual obj"
 )
 objAssigned.method("Object assign method")
 objAssigned.symboObj.anotherObj.innerMethod("Object assign method ")
