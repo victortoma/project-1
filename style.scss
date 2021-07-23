@@ -121,7 +121,8 @@ body {
 		display: grid;
 		justify-content: center;
 		align-items: center;
-		box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
+		box-shadow: -3px -3px 3px var(--contrast-light),
+			4px 3px 12px var(--lightShadow);
 		&:hover {
 			background-color: var(--lightShadow);
 		}
@@ -160,7 +161,8 @@ body {
 .card {
 	height: calc(var(--avatar) * 2.75);
 	aspect-ratio: 2/3;
-	box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
+	box-shadow: -3px -3px 3px var(--contrast-light),
+		4px 3px 12px var(--lightShadow);
 	border-radius: 0.5rem;
 	background-color: var(--secondary);
 	display: grid;
@@ -353,7 +355,7 @@ body {
 			padding-left: 0.5rem;
 		}
 		&__link {
-			box-shadow: -3px -3px 3px var(--shadow),
+			box-shadow: -3px -3px 3px var(--contrast-light),
 				4px 3px 12px var(--lightShadow);
 			height: 2.25rem;
 			border-radius: 0.5rem;

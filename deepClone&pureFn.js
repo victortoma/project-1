@@ -1,4 +1,14 @@
 const obj = {
+	a: new Date(),
+	b: NaN,
+	c: new Function(),
+	d: undefined,
+	e: function () {},
+	f: Number,
+	g: false,
+	h: Infinity,
+	sym: Symbol("xFIRST"),
+	num: 3,
 	arr: [
 		"trei",
 		undefined,
@@ -7,11 +17,11 @@ const obj = {
 			return console.log("hey")
 		},
 	],
-	num: 3,
 	symboObj: {
 		symbo: Symbol(""),
-		x: this.num,
+		x: false,
 		anotherObj: {
+			x: "string",
 			innerMethod: function (cloneType) {
 				console.log(`innerObj method ${cloneType} `)
 			},
@@ -21,17 +31,34 @@ const obj = {
 		console.log(text, "using this keyword is:", this.num)
 	},
 }
+
+const deepCopyFunction = (inObject) => {
+	let outObject, key
+	if (typeof inObject !== "object" || inObject === null) {
+		return inObject //if keys of the object are other then obj // for recursive call especially
+	}
+
+	outObject = Array.isArray(inObject) ? [] : {}
+
+	for (key in inObject) {
+		outObject[key] = deepCopyFunction(inObject[key]) // clone every key of the obj
+	}
+
+	return outObject
+}
+
+const cloned = deepCopyFunction(obj)
 console.log("ORIGINAL OBJ:", obj)
 console.log("---------------------")
+console.log(cloned)
+console.log("---------------------")
 
-const clonedObj = obj
-console.log(clonedObj, "reference to the original obj")
+const equalObj = obj
+console.log(equalObj, "equal reference to the original obj")
 console.log("---------------------")
 
 stringifiedObj = JSON.parse(JSON.stringify(obj))
 console.log(stringifiedObj, "stringify shallow doesnt copy methods")
-console.log("stringifiedObj is the same with obj?", stringifiedObj === obj)
-// stringifiedObj.method("JSON stringify method")
 console.log("---------------------")
 
 const objAssigned = Object.assign({}, obj)
@@ -39,10 +66,8 @@ console.log(
 	objAssigned,
 	"Object assign is altered by an ulterior push inside an referenced array, its the fastest and can be used to add properties to an existing object, giving the first param the actual obj"
 )
-objAssigned.method("Object assign method")
 objAssigned.symboObj.anotherObj.innerMethod("Object assign method ")
 objAssigned.arr.push("pushed after")
-console.log("objAssigned is the same with obj?", objAssigned === obj)
 console.log("---------------------")
 
 const forKeyObj = {}
@@ -50,10 +75,7 @@ for (let key in obj) {
 	forKeyObj[key] = obj[key]
 }
 console.log(forKeyObj, "forKeyIn method")
-forKeyObj.method("for key in method")
 forKeyObj.symboObj.anotherObj.innerMethod("for key in method")
-console.log("forKeyObj is the same with obj?", forKeyObj === obj)
-
 console.log("---------------------")
 
 const spreadObj = { ...obj }
@@ -61,14 +83,6 @@ console.log(
 	spreadObj,
 	"spreadObj cannot assign properties to the same existing obj if it is declared with const"
 )
-spreadObj.method("spreadObj")
-spreadObj.symboObj.anotherObj.innerMethod("spread clone")
-console.log("spreadObj is the same with obj?", spreadObj === obj)
-
-console.log("---------------------")
-
-// obj.num = "replaced"
-console.log(obj, "obj after key change")
 console.log("---------------------")
 
 //impure2
