@@ -117,10 +117,9 @@ console.log("after", globalArr)
 console.log("---------------------")
 
 //pure2
-const globalArr2 = [0, 1, 2]
 function pure2(arr, elem) {
 	const newArr = arr
 	arr.push(elem)
 	return newArr
 }
-console.log(pure2(globalArr2, 7), "new arr returned by fn")
+console.log(pure2(globalArr, 7), "new arr returned by fn")

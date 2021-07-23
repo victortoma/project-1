@@ -110,8 +110,6 @@ arr7.forEach((elem, index) => {
 	if (elem === "blue") {
 		return // break from loop for this index only
 	} else console.log(elem, "   - foreach elem")
-	// This callback implicitly returns `undefined`, which
-	// is a falsy value. Therefore, looping continues.
 })
 console.log("---------------------")
 
