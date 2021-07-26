@@ -160,8 +160,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
-          box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
+  -webkit-box-shadow: -3px -3px 3px var(--contrast-light), 4px 3px 12px var(--lightShadow);
+          box-shadow: -3px -3px 3px var(--contrast-light), 4px 3px 12px var(--lightShadow);
 }
 
 .menu__icon:hover {
@@ -215,8 +215,8 @@ body {
 .card {
   height: calc(var(--avatar) * 2.75);
   aspect-ratio: 2/3;
-  -webkit-box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
-          box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
+  -webkit-box-shadow: -3px -3px 3px var(--contrast-light), 4px 3px 12px var(--lightShadow);
+          box-shadow: -3px -3px 3px var(--contrast-light), 4px 3px 12px var(--lightShadow);
   border-radius: 0.5rem;
   background-color: var(--secondary);
   display: -ms-grid;
@@ -466,8 +466,8 @@ body {
     padding-left: 0.5rem;
   }
   .menu__link {
-    -webkit-box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
-            box-shadow: -3px -3px 3px var(--shadow), 4px 3px 12px var(--lightShadow);
+    -webkit-box-shadow: -3px -3px 3px var(--contrast-light), 4px 3px 12px var(--lightShadow);
+            box-shadow: -3px -3px 3px var(--contrast-light), 4px 3px 12px var(--lightShadow);
     height: 2.25rem;
     border-radius: 0.5rem;
     padding-left: 0.5rem;
