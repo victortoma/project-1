@@ -1,5 +1,14 @@
 //1
-const ArrOfCurrencyForExchange = ["100USD", "45RON", "73CAD", "67GBP", 0, "110"]
+const ArrOfCurrencyForExchange = [
+	"100USD",
+	"45RON",
+	"73CAD",
+	"67GBP",
+	"100DKK",
+	0,
+	"110",
+]
+console.log(ArrOfCurrencyForExchange)
 const selectCurrencyDropdown = document.querySelector("#select")
 const url =
 	"http://api.exchangeratesapi.io/v1/latest?access_key=08b0089789e9ffd4e260670d86037c10&"
@@ -10,7 +19,11 @@ const createDivFn = (text) => {
 	return document.body.appendChild(p)
 }
 
-const currencyConverterToEur = (valueToBeExchanged, ratesObj) => {
+const currencyConverterToBase = (
+	valueToBeExchanged,
+	ratesObj,
+	baseCurrency
+) => {
 	if (typeof valueToBeExchanged === "string") {
 		const regexp = /[0-9]/gi
 		let dividerIndex = valueToBeExchanged
@@ -20,19 +33,19 @@ const currencyConverterToEur = (valueToBeExchanged, ratesObj) => {
 			let value = valueToBeExchanged.slice(0, dividerIndex)
 			let currencySymbol = valueToBeExchanged.slice(dividerIndex)
 
-			let valueInEuro = (value / ratesObj[currencySymbol]).toFixed(3)
-			let resultInEurDisplayValue = `${valueToBeExchanged} is ${valueInEuro} EUR`
-			return resultInEurDisplayValue
+			let valueInBaseCurrency = (value / ratesObj[currencySymbol]).toFixed(3)
+			let displayExchangedValue = `${valueToBeExchanged} is ${valueInBaseCurrency} ${baseCurrency}`
+			return displayExchangedValue
 		} else {
-			return `${valueToBeExchanged} EUR`
+			return `${valueToBeExchanged} ${baseCurrency}`
 		}
 	} else {
 		return "no proper value"
 	}
 }
 
-async function fetchFunction(url = "", base = "", symbols = "") {
-	const baseString = base.length ? `&base=${base}` : ""
+async function fetchFunction(url = "", baseCurrency = "", symbols = "") {
+	const baseString = baseCurrency.length ? `&base=${baseCurrency}` : ""
 	const symbolsString = symbols.length ? `&symbols=${symbols}` : ""
 
 	const response = await fetch(`${url}${baseString}${symbolsString}`)
@@ -43,23 +56,21 @@ selectCurrencyDropdown.addEventListener("input", () => {
 	fetchFunction(
 		url,
 		`${selectCurrencyDropdown.value}`,
-		"GBP,USD,RON,CAD"
+		"GBP,USD,RON,CAD, DKK"
 	).then((currencyObj) => {
-		createDivFn(selectCurrencyDropdown.value)
-		return displayExchangedCurrency(currencyObj.rates)
+		return displayExchangedCurrency(
+			currencyObj.rates,
+			`${selectCurrencyDropdown.value}`
+		)
 	})
 })
 
-const displayExchangedCurrency = (currencyObj) => {
-	for (let rate in currencyObj) {
-		createDivFn(`${rate}: ${currencyObj[rate]}`)
-	}
+const displayExchangedCurrency = (currencyObj, baseCurrency) => {
 	let exchangedArrayForDisplay
 	exchangedArrayForDisplay = ArrOfCurrencyForExchange.map(
 		(valueToBeExchanged) =>
-			currencyConverterToEur(valueToBeExchanged, currencyObj)
+			currencyConverterToBase(valueToBeExchanged, currencyObj, baseCurrency)
 	)
-	console.log(exchangedArrayForDisplay)
 	exchangedArrayForDisplay.forEach((element) => createDivFn(element))
 }
 //------------------------------
