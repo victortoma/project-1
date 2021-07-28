@@ -62,3 +62,36 @@ const prototype = (function () {
 	}
 	return { aMethod }
 })()
+const reveal = (function () {
+	const insideVariable = "this is from prototype"
+	const aMethod = (outside) => {
+		console.log(`${outside} ${insideVariable}`)
+	}
+	return { revealingMethod: aMethod }
+})()
+var HTMLChanger = (function () {
+	var privateFunc = function () {
+		this.sayHello()
+	}
+	var hello = function () {
+		console.log("say Hello")
+	}
+	var callPrivate = function () {
+		privateFunc.call(this)
+	}
+
+	return {
+		sayHello: hello,
+		callPrivate: callPrivate,
+	}
+})()
+
+HTMLChanger.callPrivate()
+//say Hello
+
+HTMLChanger.sayHello = function () {
+	console.log("say Hi!")
+}
+
+HTMLChanger.callPrivate()
+//say Hi!
