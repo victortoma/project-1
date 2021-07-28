@@ -39,7 +39,7 @@ class Square extends Shape {
 }
 let square = new Square(6)
 console.log(triangle.calcPerimeter())
-console.log(square.calcArea()) //
+console.log(square.calcArea())
 console.log(square.calcPerimeter())
 console.log(square.show())
 console.log(square.showPrivate())
@@ -48,8 +48,17 @@ console.log(Shape.prototype)
 let arr = ["stringOne", "stringTwo", "stringThree"]
 
 Array.prototype.reverseStringsFromArray = function () {
+	// Object.prototype also
 	this.forEach((element) => {
 		console.log(element.split("").reverse().join(""))
 	})
 }
 arr.reverseStringsFromArray()
+
+const prototype = (function () {
+	const insideVariable = "this is from prototype"
+	const aMethod = (outside) => {
+		console.log(`${outside} ${insideVariable}`)
+	}
+	return { aMethod }
+})()
