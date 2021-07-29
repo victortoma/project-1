@@ -62,6 +62,7 @@ const prototype = (function () {
 	}
 	return { aMethod }
 })()
+
 const reveal = (function () {
 	const insideVariable = "this is from prototype"
 	const aMethod = (outside) => {
@@ -69,6 +70,7 @@ const reveal = (function () {
 	}
 	return { revealingMethod: aMethod }
 })()
+
 var HTMLChanger = (function () {
 	var privateFunc = function () {
 		this.sayHello()
