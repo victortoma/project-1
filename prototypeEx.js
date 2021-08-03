@@ -15,8 +15,7 @@ class Shape {
 		console.log(this.#privateMember)
 		console.log(this.#privateMethod())
 	}
-	revealModulePattern = () => {
-		console.log(this)
+	classScopeArrow = () => {
 		const insideVariable = "scope variable"
 		const aRevealMethod = (outside) => {
 			console.dir(aRevealMethod)
@@ -24,16 +23,15 @@ class Shape {
 		}
 		return { revealingMethod: aRevealMethod, x: "x" }
 	}
-	revealModulePattern = function () {
-		console.log(this)
-		const insideVariable = "scope variable"
-		const aRevealMethod = () => {
-			const y = "y"
-			console.dir(aRevealMethod)
-			console.log(this, insideVariable, y)
-		}
-		return { revealingMethod: aRevealMethod, x: "x" }
-	}
+	// revealModulePattern = function () {
+	// 	const insideVariable = "scope variable"
+	// 	const aRevealMethod = () => {
+	// 		const y = "y"
+	// 		console.dir(aRevealMethod)
+	// 		console.log(this, insideVariable, y)
+	// 	}
+	// 	return { revealingMethod: aRevealMethod, x: "x" }
+	// }
 }
 class Square extends Shape {
 	constructor(sideLength) {
@@ -44,16 +42,17 @@ class Square extends Shape {
 	}
 }
 let square = new Square(6)
-// Shape.prototype.revealModulePattern =  () => {
-// 	const insideVariable = "scope variable"
-// 	const aRevealMethod = () => {
-// 		const y = "y"
-// 		console.dir(aRevealMethod)
-// 		console.log(this, insideVariable, y)
-// 	}
-// 	return { revealingMethod: aRevealMethod, x: "x" }
-// }
-square.revealModulePattern().revealingMethod()
+Shape.prototype.globalScopeArrow = () => {
+	const insideVariable = "scope variable"
+	const aRevealMethod = () => {
+		const y = "y"
+		console.dir(aRevealMethod)
+		console.log(this, insideVariable, y)
+	}
+	return { revealingMethod: aRevealMethod, x: "x" }
+}
+square.classScopeArrow().revealingMethod()
+square.globalScopeArrow().revealingMethod()
 
 let triangle = new Shape("triangle", 3, 6)
 
@@ -84,7 +83,6 @@ Array.prototype.reverseStringsFromArray = function () {
 }
 // arr.reverseStringsFromArray()
 ///////////////////
-
 const modulePattern = (function () {
 	const insideVariable = "this is from prototype"
 	const aMethod = function () {
