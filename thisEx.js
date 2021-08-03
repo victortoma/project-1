@@ -58,7 +58,7 @@ var a = {
 	c: 5,
 	b: {
 		c: 10,
-		fn: function () {
+		fn: () => {
 			console.log(this)
 			return this.c
 		},
@@ -93,7 +93,7 @@ const button = document.createElement("button")
 button.textContent = "Click me"
 document.body.append(button)
 
-button.addEventListener("click", function (event) {
-	console.log(this.constructor.prototype)
-	console.log(event.currentTarget)
+button.addEventListener("click", () => {
+	console.log(this, "button")
+	// console.log(event.currentTarget)
 })

@@ -15,7 +15,45 @@ class Shape {
 		console.log(this.#privateMember)
 		console.log(this.#privateMethod())
 	}
+	revealModulePattern = () => {
+		console.log(this)
+		const insideVariable = "scope variable"
+		const aRevealMethod = (outside) => {
+			console.dir(aRevealMethod)
+			console.log(this, insideVariable)
+		}
+		return { revealingMethod: aRevealMethod, x: "x" }
+	}
+	revealModulePattern = function () {
+		console.log(this)
+		const insideVariable = "scope variable"
+		const aRevealMethod = () => {
+			const y = "y"
+			console.dir(aRevealMethod)
+			console.log(this, insideVariable, y)
+		}
+		return { revealingMethod: aRevealMethod, x: "x" }
+	}
 }
+class Square extends Shape {
+	constructor(sideLength) {
+		super("square", 4, sideLength)
+	}
+	calcArea() {
+		return this.sideLength ** 2
+	}
+}
+let square = new Square(6)
+// Shape.prototype.revealModulePattern =  () => {
+// 	const insideVariable = "scope variable"
+// 	const aRevealMethod = () => {
+// 		const y = "y"
+// 		console.dir(aRevealMethod)
+// 		console.log(this, insideVariable, y)
+// 	}
+// 	return { revealingMethod: aRevealMethod, x: "x" }
+// }
+square.revealModulePattern().revealingMethod()
 
 let triangle = new Shape("triangle", 3, 6)
 
@@ -29,50 +67,39 @@ Shape.prototype.calcPerimeter = function () {
 	return total
 }
 
-class Square extends Shape {
-	constructor(sideLength) {
-		super("square", 4, sideLength)
-	}
-	calcArea() {
-		return this.sideLength ** 2
-	}
-}
-let square = new Square(6)
-console.log(triangle.calcPerimeter())
-console.log(square.calcArea())
-console.log(square.calcPerimeter())
-console.log(square.show())
-console.log(square.showPrivate())
+// console.log(triangle.calcPerimeter())
+// console.log(square.calcArea())
+// console.log(square.calcPerimeter())
+// console.log(square.show())
+// console.log(square.showPrivate())
 console.log(Shape.prototype)
-
+console.log(square.constructor.__proto__.__proto__)
+///////////////////
 let arr = ["stringOne", "stringTwo", "stringThree"]
-
 Array.prototype.reverseStringsFromArray = function () {
 	// Object.prototype also
 	this.forEach((element) => {
 		console.log(element.split("").reverse().join(""))
 	})
 }
-arr.reverseStringsFromArray()
+// arr.reverseStringsFromArray()
+///////////////////
 
-const prototype = (function () {
+const modulePattern = (function () {
 	const insideVariable = "this is from prototype"
-	const aMethod = (outside) => {
-		console.log(`${outside} ${insideVariable}`)
+	const aMethod = function () {
+		console.dir(aMethod)
+		console.log(this)
+		// console.log(`${outside} ${insideVariable}`)
 	}
 	return { aMethod }
 })()
-
-const reveal = (function () {
-	const insideVariable = "this is from prototype"
-	const aMethod = (outside) => {
-		console.log(`${outside} ${insideVariable}`)
-	}
-	return { revealingMethod: aMethod }
-})()
-
+// console.log(modulePattern.aMethod())
+modulePattern.aMethod("hello")
+///////////////////
 var HTMLChanger = (function () {
 	var privateFunc = function () {
+		console.log(this)
 		this.sayHello()
 	}
 	var hello = function () {
@@ -84,16 +111,17 @@ var HTMLChanger = (function () {
 
 	return {
 		sayHello: hello,
-		callPrivate: callPrivate,
+		public: callPrivate,
+		x: "x",
 	}
 })()
-
-HTMLChanger.callPrivate()
+console.log(HTMLChanger.constructor.prototype)
+HTMLChanger.public()
 //say Hello
 
 HTMLChanger.sayHello = function () {
 	console.log("say Hi!")
 }
 
-HTMLChanger.callPrivate()
+HTMLChanger.public()
 //say Hi!
